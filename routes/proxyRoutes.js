@@ -1,8 +1,9 @@
 import express from 'express';
-import { proxyRequest } from '../controller/requestController.js'; // import named export
+import { proxyRequest, getRequests } from '../controller/requestController.js'; // import named export
 
 const router = express.Router();
 
-router.post('/', proxyRequest);
+router.post('/api/proxy', proxyRequest);
+router.get('/api/requests', getRequests);
 
 export default router;
