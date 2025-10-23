@@ -9,12 +9,11 @@ CREATE TABLE requests (
     description VARCHAR(255)
 );
 
--- INSERT INTO requests (method, path, response, statusCode, responseTime, description)
--- VALUES ('GET', '/posts', '{"id":1,"title":"Test post"}', 200, 123, 'Test request');
+CREATE TABLE problems (
+    id SERIAL PRIMARY KEY,
+    request_id INT NOT NULL REFERENCES requests(id) ON DELETE CASCADE,
+    type VARCHAR(50) NOT NULL,          -- npr. 'slow-response'
+    response_time INT NOT NULL,         -- vrijeme koje je izazvalo problem
+    created_at TIMESTAMP DEFAULT NOW()
+);
 
--- SELECT * FROM requests
--- ORDER BY createdAt DESC;
-
--- SELECT * FROM requests
--- WHERE method = 'GET' AND responseTime < 200
--- ORDER BY responseTime ASC;
