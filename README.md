@@ -61,3 +61,23 @@ To start the server with automatic restart (e.g., using nodemon):
 ```
 npm run dev
 ```
+
+**5. SENDING REQUESTS TO THE API MONITOR**
+
+To add requests to the monitoring system, you can send a POST request via Postman to the endpoint:
+```bash
+POST http://localhost:8080/api/send/requests
+```
+
+**Request body example:**
+```bash
+{
+  "method": "POST",
+  "url": "https://jsonplaceholder.typicode.com/posts",
+  "data": null
+}
+```
+
+-- `method`: HTTP method of the request you want to monitor (`GET`, `POST`, etc.)
+-- `url`: URL of the target API (can be any valid API endpoint)
+-- `data`: Optional payload for the request (can be `null` if not needed)
