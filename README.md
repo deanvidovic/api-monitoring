@@ -78,6 +78,6 @@ POST http://localhost:8080/api/send/requests
 }
 ```
 
---`method`: HTTP method of the request you want to monitor (`GET`, `POST`, etc.)
---`url`: URL of the target API (can be any valid API endpoint)
---`data`: Optional payload for the request (can be `null` if not needed)
+-`method`: HTTP method of the request you want to monitor (`GET`, `POST`, etc.)
+-`url`: URL of the target API (can be any valid API endpoint)
+-`data`: Optional payload for the request (can be `null` if not needed)
